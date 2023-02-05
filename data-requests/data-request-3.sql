@@ -1,0 +1,5 @@
+-- Find the top five countries that have the most combined coffee imported and exported
+-- between 1995 to 2000.
+--
+-- Include Country, Export Total, Import Total, and Combined Import+Export for 
+-- the date range

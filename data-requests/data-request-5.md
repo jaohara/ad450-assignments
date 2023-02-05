@@ -1,0 +1,7 @@
+# Data Request 5
+### Show the import totals for each country, plus the country of origin for the imports ranked by import volume.
+As it is, we are unable to answer this query with the dataset that we have. This is because that in the `coffee_imports` table, the total imports for each country are shown as one lump sum. This total does not disambiguate between the countries of origin for the import totals, so we would be unable to get the country of origin.
+
+In order to solve this I would suggest normalizing the data a little more and doing away with the `coffee_import` table as it is currently structured. I would probably have the countries in their own table, and then have an intermediary table called something like `coffee_transactions` that would record each import and export as an event. 
+
+Each line in this table would have `origin_country`, `destination_country`, `amount`, and `date`. With this new structure, we could replace the functionality of the `coffee_import` table by querying for import transactions from a given `date` range and sum them up to get the import total for that year. We could also use this to disambiguate between country of origin and rank them by import volume.

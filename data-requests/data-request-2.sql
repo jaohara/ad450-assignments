@@ -1,0 +1,4 @@
+-- Find the countries with the second most coffee production from 1990-1994 for
+-- each coffee_type. 
+--
+--  There can be one or more countries for each coffee_type (no gaps in ranking)
